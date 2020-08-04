@@ -21,9 +21,7 @@ class App extends React.Component {
   componentDidUpdate() {
     console.log(" did something change");
   }
-
-  //React says we have to define render!!
-  render() {
+  renderContent() {
     if (this.state.errorMessage && !this.state.lat) {
       return <div> Error: {this.state.errorMessage} </div>;
     }
@@ -37,6 +35,10 @@ class App extends React.Component {
     }
 
     return <Spinner />;
+  }
+  //React says we have to define render!!
+  render() {
+    return <div className="border red"> {this.renderContent()}</div>;
   }
 }
 
